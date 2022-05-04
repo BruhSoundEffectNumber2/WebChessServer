@@ -1,14 +1,7 @@
-const http = require("http");
-
-const hostname = "127.0.0.1";
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "text/plain");
-    res.end("Hello World");
+"use strict";
+exports.__esModule = true;
+var socket_io_1 = require("socket.io");
+var io = new socket_io_1.Server({});
+io.on("connection", function (socket) {
 });
-
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+io.listen(3000);
