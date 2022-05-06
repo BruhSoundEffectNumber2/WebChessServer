@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "bash run.bash"
+run = "node dist/server.js"

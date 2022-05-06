@@ -14,11 +14,11 @@ let usersConnected = 0;
 io.on("connection", (socket) => {
     usersConnected++;
     console.log("A user connected. Active users: " + usersConnected);
-});
 
-io.on("disconnect", (reason) => {
-    usersConnected--;
-    console.log("A user disconnected. Active users: " + usersConnected);
+    io.on("disconnect", (reason) => {
+        usersConnected--;
+        console.log("A user disconnected. Active users: " + usersConnected);
+    });
 });
 
 io.listen(3000);
